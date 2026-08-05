@@ -222,6 +222,17 @@ function init() {
     passwordInput.addEventListener('input', hideError);
 }
 
+// Add this function to reset lockout manually (for testing)
+function resetLockout() {
+    localStorage.removeItem('loginState');
+    location.reload();
+}
+
+// Add a hidden reset button in HTML (optional)
+// Add this inside <form>:
+// <button type="button" onclick="resetLockout()" style="display:none;">Reset</button>
+
+
 // Start the app
 init();
 
